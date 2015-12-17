@@ -46,8 +46,5 @@
                     $scope.userList.$setPristine();
                 }
             });
-
-            githubUserService.getCurrentUsers();
-
         }]);
 })();
