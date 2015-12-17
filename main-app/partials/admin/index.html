@@ -1,5 +1,5 @@
 <nav>
-    <ul class="nav nav-pills" ng-show="isAuthenticated()">
+    <ul class="nav nav-pills" ng-show="tokenService.isAuthenticated()">
         <li><a ng-click="githubUserService.getCurrentUsers();" ui-sref="admin.githubusers">Github Users</a></li>
         <li><a ui-sref="admin.githubrepositories">Repositories</a></li>
     </ul>
