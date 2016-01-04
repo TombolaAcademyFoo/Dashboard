@@ -33,8 +33,7 @@
                 })
                 .state('admin.tickets', {
                     url:'/tickets',
-                    //TODO create and add controller for tickets
-                    controller:'',
+                    controller:'TicketController',
                     templateUrl: 'partials/admin/tickets.html'
                 });
         }]);

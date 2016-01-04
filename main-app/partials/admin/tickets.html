@@ -1,1 +1,16 @@
 <h2>Current Tickets</h2>
+<form class="admin" name="userList">
+    <table class="admin">
+        <tr><th>Ticket String</th></tr>
+        <tr ng-repeat="ticket in ticketService.tickets">
+            <td><input type="text" ng-model="ticket"></td>
+        </tr>
+    </table>
+</form>
+<form class="admin" name="newTicket">
+    <div>
+        <label for="ticket">Ticket</label>
+        <input id="ticket" type="text">
+    </div>
+    <div><input type="submit" value="add" ng-click=""> </div>
+</form>
