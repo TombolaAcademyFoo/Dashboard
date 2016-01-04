@@ -30,6 +30,12 @@
                     url:'/githubrepos',
                     controller:'GithubRepositoriesController',
                     templateUrl: 'partials/admin/githubrepos.html'
+                })
+                .state('admin.tickets', {
+                    url:'/tickets',
+                    //TODO create and add controller for tickets
+                    controller:'',
+                    templateUrl: 'partials/admin/tickets.html'
                 });
         }]);
 })();
