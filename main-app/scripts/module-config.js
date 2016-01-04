@@ -34,7 +34,10 @@
                 .state('admin.tickets', {
                     url:'/tickets',
                     controller:'TicketController',
-                    templateUrl: 'partials/admin/tickets.html'
+                    templateUrl: 'partials/admin/tickets.html',
+                    onEnter: ['TicketService', function (ticketService) {
+                        ticketService.getCurrentTickets();
+                    }]
                 });
         }]);
 })();

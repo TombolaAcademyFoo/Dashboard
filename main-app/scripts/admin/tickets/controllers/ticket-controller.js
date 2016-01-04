@@ -3,6 +3,17 @@
     angular.module('Tombola.Academy.Dash.Admin.Tickets')
         .controller('TicketController', ['$scope', 'TicketService', function($scope, ticketService) {
             $scope.ticketService = ticketService;
-            //TODO add scope CRUD methods
+
+            $scope.updateTicket = function (id, ticket) {
+                ticketService.updateTicket(id, ticket);
+            };
+
+            $scope.removeTicket = function (ticket) {
+                ticketService.removeTicket(ticket);
+            };
+
+            $scope.addTicket = function (ticket) {
+                ticketService.addTicket(ticket);
+            };
         }]);
 })();
