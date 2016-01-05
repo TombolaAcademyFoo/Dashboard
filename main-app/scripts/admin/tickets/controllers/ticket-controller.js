@@ -8,12 +8,12 @@
                 ticketService.updateTicket(id, ticket);
             };
 
-            $scope.removeTicket = function (ticket) {
-                ticketService.removeTicket(ticket);
+            $scope.removeTicket = function (id) {
+                ticketService.removeTicket(id);
             };
 
-            $scope.addTicket = function (ticket) {
-                ticketService.addTicket(ticket);
+            $scope.addTicket = function () {
+                ticketService.addTicket();
             };
         }]);
 })();

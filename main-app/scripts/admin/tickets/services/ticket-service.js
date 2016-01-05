@@ -5,20 +5,22 @@
             var me = this,
                 proxy;
             me.tickets = [];
-            me.newTicket = {};
+            me.newTicketFromUi = {};
             proxy = new taBaseProxy('bingotickets');
 
             //TODO add CRUD methods that talk to api proxy.
 
             me.resetNewTicket = function () {
-                me.ticket = {
-                  ticketString:''
+                me.newTicketFromUi = {
+                    ticket:'',
+                    gameid: 1
                 };
             };
 
             me.getCurrentTickets = function () {
                 proxy.get(apiDataConverter.getJson)
                     .then(function (data) {
+                        console.log(data);
                        me.tickets = data;
                     })
                     .catch(function (response) {
@@ -26,8 +28,8 @@
                     });
             };
 
-            me.addTicket = function (ticket) {
-                taBaseProxy.add(ticket)
+            me.addTicket = function () {
+                proxy.add(me.newTicketFromUi)
                     .then(function () {
                         me.getCurrentTickets();
                     })
@@ -37,7 +39,7 @@
             };
 
             me.updateTicket = function(id, update){
-                taBaseProxy.update(id, update)
+                proxy.update(id, update)
                     .then(function(){
                         me.getCurrentTickets();
                     })
@@ -46,8 +48,8 @@
                     });
             };
 
-            me.removeTicket = function(ticket){
-                taBaseProxy.remove(ticket.id)
+            me.removeTicket = function(id){
+                proxy.remove(id)
                     .then(function(){
                         me.getCurrentTickets();
                     })
