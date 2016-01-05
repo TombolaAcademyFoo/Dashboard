@@ -8,8 +8,6 @@
             me.newTicketFromUi = {};
             proxy = new taBaseProxy('bingotickets');
 
-            //TODO add CRUD methods that talk to api proxy.
-
             me.resetNewTicket = function () {
                 me.newTicketFromUi = {
                     ticket:'',
@@ -20,11 +18,10 @@
             me.getCurrentTickets = function () {
                 proxy.get(apiDataConverter.getJson)
                     .then(function (data) {
-                        console.log(data);
                        me.tickets = data;
                     })
                     .catch(function (response) {
-                        //TODO: visible error message.
+                        alert("There was a problem getting tickets: " + response);
                     });
             };
 
@@ -32,19 +29,20 @@
                 proxy.add(me.newTicketFromUi)
                     .then(function () {
                         me.getCurrentTickets();
+                        me.resetNewTicket();
                     })
                     .catch(function (response) {
-                        //TODO: visible error message.
+                        alert("There was a problem adding ticket: " + response);
                     });
             };
 
-            me.updateTicket = function(id, update){
-                proxy.update(id, update)
+            me.updateTicket = function(ticket){
+                proxy.update(ticket.id, ticket)
                     .then(function(){
                         me.getCurrentTickets();
                     })
                     .catch(function (response) {
-                        //TODO: visible error message.
+                        alert("There was a problem updating ticket: " + response);
                     });
             };
 
@@ -54,7 +52,7 @@
                         me.getCurrentTickets();
                     })
                     .catch(function (response) {
-                        //TODO: visible error message.
+                        alert("There was a problem deleting ticket: " + response);
                     });
             };
         }]);

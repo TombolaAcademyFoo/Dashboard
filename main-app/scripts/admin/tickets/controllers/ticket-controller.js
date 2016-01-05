@@ -4,8 +4,8 @@
         .controller('TicketController', ['$scope', 'TicketService', function($scope, ticketService) {
             $scope.ticketService = ticketService;
 
-            $scope.updateTicket = function (id, ticket) {
-                ticketService.updateTicket(id, ticket);
+            $scope.updateTicket = function (ticket) {
+                ticketService.updateTicket(ticket);
             };
 
             $scope.removeTicket = function (id) {
