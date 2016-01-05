@@ -13,6 +13,10 @@
             };
 
             $scope.addTicket = function () {
+                if(!ticketService.newTicketFromUi.ticket || !ticketService.newTicketFromUi.gameid){
+                    console.log("you left a field empty");
+                    return;
+                }
                 ticketService.addTicket();
             };
         }]);
