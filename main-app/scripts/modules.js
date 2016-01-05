@@ -34,7 +34,6 @@
     angular.module('Tombola.Academy.Dash.Admin.GithubUsers', ['Tombola.Academy.Dash.TaProxy']);
     angular.module('Tombola.Academy.Dash.WaitingPulls', ['Tombola.Academy.Dash.GithubProxy', 'Tombola.Academy.Dash.TaProxy']);
     angular.module('Tombola.Academy.Dash.Stats', ['Tombola.Academy.Dash.GithubProxy', 'Tombola.Academy.Dash.TaProxy']);
-    //TODO will need to add services in here later
     angular.module('Tombola.Academy.Dash.Admin.Tickets', []);
     angular.module('Tombola.Academy.Dash.Pixi', ['Tombola.Academy.Dash.Core']);
     angular.module('Tombola.Academy.Dash.Main',['Tombola.Academy.Dash.Core', 'Tombola.Academy.Dash.Authentication']);

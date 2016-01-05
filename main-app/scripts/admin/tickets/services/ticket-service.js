@@ -1,10 +1,12 @@
 (function () {
     'use strict';
     angular.module('Tombola.Academy.Dash.Admin.Tickets')
-        .service('TicketService', ['TaBaseProxy', function(taBaseProxy){
-            var me = this;
+        .service('TicketService', ['TaBaseProxy', 'ApiDataConverter', function(taBaseProxy, apiDataConverter){
+            var me = this,
+                proxy;
             me.tickets = [];
             me.newTicket = {};
+            proxy = new taBaseProxy('bingotickets');
 
             //TODO add CRUD methods that talk to api proxy.
 
@@ -15,9 +17,9 @@
             };
 
             me.getCurrentTickets = function () {
-                taBaseProxy('bingotickets').get()
+                proxy.get(apiDataConverter.getJson)
                     .then(function (data) {
-                       console.log(data);
+                       me.tickets = data;
                     })
                     .catch(function (response) {
                         //TODO: visible error message.
