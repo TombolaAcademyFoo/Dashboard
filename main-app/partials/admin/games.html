@@ -1,0 +1,21 @@
+<h2>Current Games</h2>
+<form class="admin" name="gameList">
+    <table class="admin">
+        <tr><th>Game</th>
+        <tr ng-repeat="game in gameService.games">
+            <td><input type="text" ng-model="game.ordertocall" size="180"></td>
+            <td><button ng-click="updateGame(game)">Update</button></td>
+            <td><button ng-click="removeGame(game.id)">Remove</button></td>
+        </tr>
+    </table>
+</form>
+<h2>Add Game</h2>
+<form class="admin" name="newGame">
+    <table class="admin">
+        <tr><th>New Game</th></tr>
+        <tr>
+            <td><input type="text" ng-model="gameService.newGameFromUi.ordertocall" size="180" required></td>
+            <td><input type="submit" value="add" ng-click="addGame()"></td>
+        </tr>
+    </table>
+</form>

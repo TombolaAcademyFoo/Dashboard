@@ -30,6 +30,14 @@
                     url:'/githubrepos',
                     controller:'GithubRepositoriesController',
                     templateUrl: 'partials/admin/githubrepos.html'
+                })
+                .state('admin.games', {
+                    url:'/games',
+                    controller:'GameController',
+                    templateUrl: 'partials/admin/games.html',
+                    onEnter: ['GameService', function (gameService) {
+                        gameService.getCurrentGames();
+                    }]
                 });
         }]);
 })();
