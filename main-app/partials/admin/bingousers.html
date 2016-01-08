@@ -1,0 +1,27 @@
+<h2>Fake Bingo Users</h2>
+<form class="admin" name="userList">
+    <table class="admin">
+        <tr><th>Username</th><th>Password</th><th>Balance</th><th>&nbsp;</th></tr>
+        <tr ng-repeat="bingouser in (bingoUserService.bingoUsers | orderBy:'username')">
+            <td><input type="text" ng-model="bingouser.username" required ng-blur="updateUsername(bingouser)"></td>
+            <td><input type="text" ng-model="bingouser.password" required ng-blur="updatePassword(bingouser)"></td>
+            <td><input type="text" ng-model="bingouser.balance" required ng-blur="updateBalance(bingouser)"></td>
+            <td><input type="button" value="remove" ng-click="remove(bingouser)"></td>
+        </tr>
+    </table>
+</form>
+<form class="admin" name="newUser">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" type="text" ng-model="bingoUserService.newUser.username" required>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="text" ng-model="bingoUserService.newUser.password" required>
+    </div>
+    <div>
+        <label for="balance">Balance</label>
+        <input id="balance" type="text" ng-model="bingoUserService.newUser.balance" required>
+    </div>
+    <div><input type="submit" value="add" ng-click="add()"> </div>
+</form>

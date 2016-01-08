@@ -16,5 +16,8 @@
     "moment": "~2.9.0",
     "ngstorage": "~0.3.0",
     "pixi.js": "pixi#~3.0.8"
+  },
+  "resolutions": {
+    "angular": ">=1.0.8"
   }
 }

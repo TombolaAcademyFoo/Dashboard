@@ -31,6 +31,7 @@
     angular.module('Tombola.Academy.Dash.Authentication', []);
     angular.module('Tombola.Academy.Dash.GithubProxy', []);
     angular.module('Tombola.Academy.Dash.TaProxy', ['Tombola.Academy.Dash.Authentication']);
+    angular.module('Tombola.Academy.Dash.Admin.BingoUsers', ['Tombola.Academy.Dash.TaProxy']);
     angular.module('Tombola.Academy.Dash.Admin.GithubUsers', ['Tombola.Academy.Dash.TaProxy']);
     angular.module('Tombola.Academy.Dash.WaitingPulls', ['Tombola.Academy.Dash.GithubProxy', 'Tombola.Academy.Dash.TaProxy']);
     angular.module('Tombola.Academy.Dash.Stats', ['Tombola.Academy.Dash.GithubProxy', 'Tombola.Academy.Dash.TaProxy']);
