@@ -50,14 +50,14 @@
                 if(!user.password){
                     return;
                 }
-                me.updateUser(user.id, {username: user.username});
+                me.updateUser(user.id, {username: user.password});
             };
 
-            me.updateUsername = function(user){
-                if(!user.username){
+            me.updateBalance = function(user){
+                if(!user.balance){
                     return;
                 }
-                me.updateUser(user.id, {username: user.username});
+                me.updateUser(user.id, {username: user.balance});
             };
 
             me.toggleInclude = function(user){
