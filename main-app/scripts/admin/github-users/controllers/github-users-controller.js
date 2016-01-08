@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('Tombola.Academy.Dash.Admin.GithubUsers')
-        .controller('GithubUsersController', ['$scope', 'GithubUserService', function($scope, githubUserService){
+        .controller('GithubUsersController', ['$scope', 'GithubUserService', 'TokenService', function($scope, githubUserService, tokenService){
 
             var validateAndUpdate = function(fieldName, updateMethodName, githubUser){
                 if(!$scope.userList.$dirty){
@@ -16,6 +16,7 @@
 
             };
 
+            $scope.tokenService = tokenService;
             $scope.githubUserService = githubUserService;
 
             $scope.updateUsername = function (githubUser){
@@ -46,8 +47,5 @@
                     $scope.userList.$setPristine();
                 }
             });
-
-            githubUserService.getCurrentUsers();
-
         }]);
 })();
