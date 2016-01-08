@@ -26,6 +26,11 @@
                     controller:'GithubUsersController',
                     templateUrl: 'partials/admin/githubusers.html'
                 })
+                .state('admin.bingousers', {
+                    url:'/bingousers',
+                    controller:'BingoUsersController',
+                    templateUrl: 'partials/admin/bingousers.html'
+                })
                 .state('admin.githubrepositories', {
                     url:'/githubrepos',
                     controller:'GithubRepositoriesController',
