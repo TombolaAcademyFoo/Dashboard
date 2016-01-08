@@ -4,7 +4,7 @@
     angular.module('Tombola.Academy.Dash.WaitingPulls')
         .service('WaitingPullsPoller',['$interval', '$q', 'WaitingPullsModel', 'Nyan', function ($interval, $q, waitingPullsModel, nyan) {
             var intervalPromise,
-                interval = 0.2 * 60 * 1000,
+                interval = 5 * 60 * 1000,
                 endTime = _.now() + interval;
 
             var refresh = function () {
