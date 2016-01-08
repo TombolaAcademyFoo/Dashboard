@@ -31,10 +31,18 @@
                     controller:'GithubRepositoriesController',
                     templateUrl: 'partials/admin/githubrepos.html'
                 })
+
+                .state('admin.games', {
+                    url: '/games',
+                    controller: 'GameController',
+                    templateUrl: 'partials/admin/games.html'
+                })
+
                 .state('admin.tickets', {
                     url:'/tickets',
                     controller:'TicketController',
                     templateUrl: 'partials/admin/tickets.html'
+
                 });
         }]);
 })();
