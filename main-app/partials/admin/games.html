@@ -4,8 +4,8 @@
         <tr><th>Game</th>
         <tr ng-repeat="game in gameService.games">
             <td><input type="text" ng-model="game.ordertocall" size="180"></td>
-            <td><button ng-click="updateGame(game)">Update</button></td>
-            <td><button ng-click="removeGame(game.id)">Remove</button></td>
+            <td><button ng-click="gameService.updateGame(game)">Update</button></td>
+            <td><button ng-click="gameService.removeGame(game.id)">Remove</button></td>
         </tr>
     </table>
 </form>
@@ -15,7 +15,7 @@
         <tr><th>New Game</th></tr>
         <tr>
             <td><input type="text" ng-model="gameService.newGameFromUi.ordertocall" size="180" required></td>
-            <td><input type="submit" value="add" ng-click="addGame()"></td>
+            <td><input type="submit" value="add" ng-click="gameService.addGame()"></td>
         </tr>
     </table>
 </form>

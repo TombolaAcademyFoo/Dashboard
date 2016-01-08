@@ -34,10 +34,7 @@
                 .state('admin.games', {
                     url:'/games',
                     controller:'GameController',
-                    templateUrl: 'partials/admin/games.html',
-                    onEnter: ['GameService', function (gameService) {
-                        gameService.getCurrentGames();
-                    }]
+                    templateUrl: 'partials/admin/games.html'
                 });
         }]);
 })();
