@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Tombola.Academy.Dash.Admin.GithubUsers')
+    angular.module('Tombola.Academy.Dash.Admin.BingoUsers')
         .controller('BingoUsersController', ['$scope', 'BingoUserService', function($scope, bingoUserService){
 
             var validateAndUpdate = function(fieldName, updateMethodName, githubUser){
