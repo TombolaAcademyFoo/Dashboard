@@ -47,6 +47,7 @@
         'Tombola.Academy.Dash.Stats',
         'Tombola.Academy.Dash.Admin.GithubUsers',
         'Tombola.Academy.Dash.Pixi',
-        'Tombola.Academy.Dash.Main'
+        'Tombola.Academy.Dash.Main',
+        'Tombola.Academy.Dash.Admin.BingoUsers'
     ]);
 })();

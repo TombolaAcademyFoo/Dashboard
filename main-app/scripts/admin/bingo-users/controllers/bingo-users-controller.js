@@ -16,7 +16,7 @@
 
             };
 
-            $scope.githubUserService = bingoUserService;
+            $scope.bingoUserService = bingoUserService;
 
             $scope.updateUsername = function (bingoUser){
                 validateAndUpdate('username', 'updateUsername', bingoUser);
@@ -31,7 +31,7 @@
             };
 
             $scope.add = function(){
-                if(!bingoUserService.newUser.username || !bingoUserService.newUser.forename || !bingoUserService.newUser.surname ){
+                if(!bingoUserService.newUser.username || !bingoUserService.newUser.password || !bingoUserService.newUser.balance ){
                     return;
                 }
                 bingoUserService.addUser();

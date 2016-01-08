@@ -10,8 +10,8 @@
             me.resetNewUser = function(){
                 me.newUser = {
                     username:'',
-                    forename:'',
-                    surname:''
+                    password:'',
+                    balance:''
                 };
             };
 
@@ -19,6 +19,7 @@
                 taBingoUserProxy.get(apiDataConverter.getJson)
                     .then(function (data) {
                         me.bingoUsers = data;
+                        console.log(me.bingoUsers);
                         if(updateCallback){
                             updateCallback();
                         }
@@ -36,6 +37,20 @@
                     .catch(function (response) {
                         //TODO: visible error message.
                     });
+            };
+
+            me.updateUsername = function(user){
+                if(!user.username){
+                    return;
+                }
+                me.updateUser(user.id, {username: user.username});
+            };
+
+            me.updatePassword = function(user){
+                if(!user.password){
+                    return;
+                }
+                me.updateUser(user.id, {username: user.username});
             };
 
             me.updateUsername = function(user){
