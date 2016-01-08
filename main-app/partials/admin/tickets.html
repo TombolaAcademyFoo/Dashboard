@@ -1,0 +1,23 @@
+<h2>Current Tickets</h2>
+<form class="admin" name="userList">
+    <table class="admin">
+        <tr><th>Ticket String</th><th>Game</th></tr>
+        <tr ng-repeat="ticket in ticketService.tickets">
+            <td><input type="text" ng-model="ticket.ticket" size="35"></td>
+            <td><input type="number" ng-model="ticket.gameid" size="2"></td>
+            <td><button ng-click="ticketService.updateTicket(ticket)">Update</button></td>
+            <td><button ng-click="ticketService.removeTicket(ticket.id)">Remove</button></td>
+        </tr>
+    </table>
+</form>
+<h2>Add Ticket</h2>
+<form class="admin" name="newTicket">
+    <table class="admin">
+        <tr><th>New Ticket</th><th>Game Id</th></tr>
+        <tr>
+            <td><input type="text" ng-model="ticketService.newTicketFromUi.ticket" size="35" required></td>
+            <td><input type="number" ng-model="ticketService.newTicketFromUi.gameid" size="2" required></td>
+            <td><input type="submit" value="add" ng-click="ticketService.addTicket()"></td>
+        </tr>
+    </table>
+</form>
